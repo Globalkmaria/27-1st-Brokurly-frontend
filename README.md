@@ -21,7 +21,7 @@
   - 성종호 [github link](https://github.com/SeongJongHo)
   - 박세용 [github link](https://github.com/se-yong)
   - 제갈창민 [github link](https://github.com/Ted0527)
-    <br/>
+    <br/><br/>
 - [프론트엔드 github link](https://github.com/wecode-bootcamp-korea/27-1st-Brokurly-frontend.git)
 - [백엔드 github link](https://github.com/wecode-bootcamp-korea/27-1st-Brokurly-backend.git)
 
