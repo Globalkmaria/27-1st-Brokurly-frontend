@@ -14,9 +14,10 @@
 
 - 개발기간: 2021/11/29~2021/12/9
 - Frontend :
+  - 김성현 [github link](https://github.com/Globalkmaria)
   - 홍정빈 [github link](https://github.com/tohjbin2)
   - 구유진 [github link](https://github.com/sodalite1204)
-  - 김성현 [github link](https://github.com/Globalkmaria)
+    <br/><br/>
 - Backend :
   - 성종호 [github link](https://github.com/SeongJongHo)
   - 박세용 [github link](https://github.com/se-yong)
@@ -41,7 +42,7 @@
 
 - Git, Github, Slack, Trello, Notion
 
-### 구현기능
+### 구현 기능
 
 - 상단바
 - 회원가입
@@ -52,25 +53,7 @@
 - 구매 내역
 - 하단바
 
-#### 상단바 (header/nav)
-
-- 스크롤시 카테고리부분이 고정
-- useLocation을 사용하여 로그인, 로그아웃 버튼 구현
-
-#### 회원가입
-
-- 유효성 검사에 따라 색상이 변하는 텍스트 UI구현
-- 유효성 검사를 위한 정규표현식 활용
-- 중복확인 검사를 통과해야 회원가입 가능
-- 중복확인 검사를 통과하지 못하면 회원가입 불가
-- 비밀번호 input.value와 비밀번호 확인 input.value가 일치해야 회원가입 가능
-
-#### 로그인
-
-- 아이디, 패스워드가 일치해야 로그인 성공
-- 로그인 성공시 sessionStorage에 토큰 발행
-- 존재하지 않는 아이디로 로그인 시도시, 경고창 반환
-- 존재하지 않는 패스워드로 로그인 시도시, 경고창 반환
+### 맡은 기능
 
 #### 제품 리스트
 
@@ -79,12 +62,6 @@
 - 대분류가 클릭 됐을 때 중분류 -> 전체 보기, 정렬 -> 신상순으로 정렬되어 일관성이 있도록 관리
 - 카트 버튼을 눌러 modal창으로 상품을 주문할 수 있게 함
 - 상품 부분 클릭 시 상세 페이지로 이동
-
-#### 제품 상세 페이지
-
-- useParams를 사용하여 백엔드로 부터 데이터를 받아 제품 표시
-- 상품 개수 입력과 버튼으로 조절 가능
-- 통큰 여부를 판단하여 구매버튼 클릭시 백엔드와 통신하여 장바구니로 담기
 
 #### 장바구니
 
@@ -102,10 +79,6 @@
 
 - 최신순으로 주문서 보여줌
 - 주문서별 주문 취소 기능
-
-#### 하단바
-
-- 레이아웃에 따른 디자인 구현
 
 ## ERD
 
