@@ -3,9 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './Product.scss';
 
-function Product({ product, putInfoIntoModal }) {
-  const { name, image, price, introduction, id } = product;
+function Product({ product, putInfoIntoModal, removePopupState }) {
+  const { name, image, price, introduction, id, popup } = product;
   const cartBtn = useRef();
+
+  if (popup) {
+    setTimeout(() => {
+      removePopupState(id);
+    }, 2000);
+  }
 
   const navigate = useNavigate();
 
@@ -18,6 +24,7 @@ function Product({ product, putInfoIntoModal }) {
   return (
     <article className="product" onClick={gotoProductDetail}>
       <div className="imgContainer">
+        {popup && <span className="popup">장바구니에 추가되었습니다</span>}
         <img src={image} alt={name} />
         <button
           className="cartBtn"
