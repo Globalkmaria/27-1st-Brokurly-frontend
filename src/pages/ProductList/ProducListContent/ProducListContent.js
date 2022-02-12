@@ -8,6 +8,7 @@ function ProducListContent({
   changeSort,
   currentSort,
   putInfoIntoModal,
+  removePopupState,
 }) {
   return (
     <div className="productListContent">
@@ -16,7 +17,11 @@ function ProducListContent({
         currentSort={currentSort}
         productTotal={products.length}
       />
-      <Products products={products} putInfoIntoModal={putInfoIntoModal} />
+      <Products
+        products={products}
+        putInfoIntoModal={putInfoIntoModal}
+        removePopupState={removePopupState}
+      />
     </div>
   );
 }

@@ -94,6 +94,22 @@ function ProductList() {
     setCurrentSort(id);
   };
 
+  const addPopupState = id => {
+    setProducts(
+      products.map(product =>
+        product.id === id ? { ...product, popup: true } : product
+      )
+    );
+  };
+
+  const removePopupState = id => {
+    setProducts(
+      products.map(product =>
+        product.id === id ? { ...product, popup: false } : product
+      )
+    );
+  };
+
   return (
     <section className="productList">
       <div className="productListContent">
@@ -112,12 +128,17 @@ function ProductList() {
             changeSort={changeSort}
             currentSort={currentSort}
             putInfoIntoModal={putInfoIntoModal}
+            removePopupState={removePopupState}
           />
         )}
       </div>
       {isCartModalOpen && (
         <Modal closeModal={closeModal}>
-          <CartModal closeModal={closeModal} product={cartInfo} />
+          <CartModal
+            closeModal={closeModal}
+            product={cartInfo}
+            addPopupState={addPopupState}
+          />
         </Modal>
       )}
     </section>

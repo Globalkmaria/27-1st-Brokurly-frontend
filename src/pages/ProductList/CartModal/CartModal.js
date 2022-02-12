@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import API from '../../../config';
 import './CartModal.scss';
 
-function CartModal({ product, closeModal }) {
+function CartModal({ product, closeModal, addPopupState }) {
   const [quantity, setQuantity] = useState(1);
   const { name, price, id } = product;
   const token = sessionStorage.getItem('token');
@@ -36,7 +36,7 @@ function CartModal({ product, closeModal }) {
           switch (res.message) {
             case 'SUCCESS':
             case 'update':
-              alert('장바구니에 상품이 추가 되었습니다.');
+              addPopupState(id);
               closeModal();
               break;
             case 'DoesNotExist':
