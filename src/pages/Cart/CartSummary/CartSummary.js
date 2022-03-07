@@ -6,6 +6,7 @@ import './CartSummary.scss';
 function CartSummary({ items, orderItems }) {
   const navigate = useNavigate();
   const token = sessionStorage.getItem('token');
+
   const total = items.reduce((previousTotal, currentItem) => {
     if (currentItem.notChecked) {
       return previousTotal;

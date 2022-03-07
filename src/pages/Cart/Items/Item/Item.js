@@ -54,7 +54,7 @@ function Item({ item, changeItemQuantity, deleteItem, changeItemCheck }) {
     setInputValue(value);
   };
 
-  const checkMinmumQuantity = e => {
+  const checkMinimumQuantity = e => {
     if (!e.target.value) {
       changeItemQuantity(cart_id, 1);
       setInputValue(1);
@@ -87,7 +87,7 @@ function Item({ item, changeItemQuantity, deleteItem, changeItemCheck }) {
             type="text"
             value={inputValue}
             onChange={changeQuantityByInput}
-            onBlur={checkMinmumQuantity}
+            onBlur={checkMinimumQuantity}
           />
           <button className="changeBtn" onClick={addQuantity}>
             +

@@ -1,9 +1,9 @@
 import React from 'react';
 import ContentHeader from './ContentHeader/ContentHeader';
 import Products from './Products/Products';
-import './ProducListContent';
+import './ProductListContent.scss';
 
-function ProducListContent({
+function ProductListContent({
   products,
   changeSort,
   currentSort,
@@ -26,4 +26,4 @@ function ProducListContent({
   );
 }
 
-export default ProducListContent;
+export default ProductListContent;

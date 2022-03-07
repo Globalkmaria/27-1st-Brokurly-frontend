@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 import API from '../../config';
 import ProductListHeader from './ProductListHeader/ProductListHeader';
-import ProducListContent from './ProducListContent/ProducListContent';
+import ProductListContent from './ProductListContent/ProductListContent';
 import CartModal from './CartModal/CartModal';
 import './ProductList.scss';
 
@@ -76,7 +76,7 @@ function ProductList() {
     setIsCartModalOpen(false);
   };
 
-  const changeCategoty = (id, category) => {
+  const changeCategory = (id, category) => {
     const newSearchParams = new URLSearchParams(searchParams);
     if (category === '전체보기') {
       newSearchParams.set('category', '');
@@ -117,13 +117,13 @@ function ProductList() {
           <ProductListHeader
             productMenu={productMenu}
             currentCategory={currentCategory}
-            changeCategoty={changeCategoty}
+            changeCategory={changeCategory}
           />
         )}
         {loaded && !products.length ? (
           <h2 className="loading">상품 없음</h2>
         ) : (
-          <ProducListContent
+          <ProductListContent
             products={products}
             changeSort={changeSort}
             currentSort={currentSort}
@@ -146,6 +146,7 @@ function ProductList() {
 }
 
 export default ProductList;
+
 const PRODUCT_MENU = {
   채소: {
     id: 0,
