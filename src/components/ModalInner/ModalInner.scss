@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.orderSuccessModalWrapper {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .deleteBtn {
+    position: absolute;
+    align-self: flex-end;
+    padding: 5px;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      font-size: 25px;
+      path {
+        color: $color-gray;
+      }
+    }
+  }
+
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
