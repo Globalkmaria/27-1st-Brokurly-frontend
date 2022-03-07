@@ -47,34 +47,4 @@
       }
     }
   }
-
-  .orderSuccessModalWrapper {
-    width: 300px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    .deleteBtn {
-      position: absolute;
-      align-self: flex-end;
-      padding: 10px;
-
-      svg {
-        font-size: 25px;
-        path {
-          color: $color-gray;
-        }
-      }
-    }
-
-    .text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      font-size: 25px;
-      font-weight: 500;
-    }
-  }
 }

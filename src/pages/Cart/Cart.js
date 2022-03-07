@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { TiDeleteOutline } from 'react-icons/ti';
 import Items from './Items/Items';
 import SelectBtns from './SelectBtns/SelectBtns';
 import CartSummary from './CartSummary/CartSummary';
 import './Cart.scss';
 import API from '../../config';
 import Modal from '../../components/Modal/Modal';
+import ModalInner from '../../components/ModalInner/ModalInner';
 
 function Cart() {
   const [items, setItems] = useState([]);
@@ -280,12 +280,7 @@ function Cart() {
       </div>
       {isOrderSuccessModalOpen && (
         <Modal closeModal={closeOrderSuccessModal}>
-          <div className="orderSuccessModalWrapper">
-            <button className="deleteBtn" onClick={closeOrderSuccessModal}>
-              <TiDeleteOutline />
-            </button>
-            <span className="text">주문 완료!</span>
-          </div>
+          <ModalInner closeModal={closeOrderSuccessModal} text="주문 완료!" />
         </Modal>
       )}
     </section>
