@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { TiDeleteOutline } from 'react-icons/ti';
 import Items from './Items/Items';
 import SelectBtns from './SelectBtns/SelectBtns';
 import CartSummary from './CartSummary/CartSummary';
 import './Cart.scss';
 import API from '../../config';
+import Modal from '../../components/Modal/Modal';
 
 function Cart() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isOrderSuccessModalOpen, setIsOrderSuccessModalOpen] = useState(false);
+  const sortedItem = {
+    coldItems: [],
+    boxItems: [],
+  };
   const token = sessionStorage.getItem('token');
+
   useEffect(() => {
     if (!token) {
       setIsLoaded(true);
@@ -32,16 +40,13 @@ function Cart() {
       .finally(setIsLoaded(true));
   }, [token]);
 
-  let coldItems = [];
-  let boxItems = [];
-
   isLoaded &&
     items.length &&
     items.forEach(item => {
       if (item.product_package.slice(0, 2) === '냉장') {
-        coldItems.push(item);
+        sortedItem.coldItems.push(item);
       } else {
-        boxItems.push(item);
+        sortedItem.boxItems.push(item);
       }
     });
 
@@ -213,11 +218,13 @@ function Cart() {
           case 'TRANSACTION_ERROR':
           case 'KEY_ERROR':
           case 'INVALID_CART':
+            // eslint-disable-next-line no-console
+            console.error(res.message);
             alert('에러 입니다');
             break;
           case 'CREATE':
             setItems(items.filter(item => item.notChecked));
-            alert('주문이 완료되었습니다.');
+            setIsOrderSuccessModalOpen(true);
             break;
           default:
             break;
@@ -228,6 +235,8 @@ function Cart() {
         console.error(e);
       });
   };
+
+  const closeOrderSuccessModal = () => setIsOrderSuccessModalOpen(false);
 
   return (
     <section className="cart">
@@ -246,20 +255,16 @@ function Cart() {
                   deleteAllCheckedItem={deleteAllCheckedItem}
                 />
                 <div className="itemsWrapper">
-                  <Items
-                    title="냉장 상품"
-                    items={coldItems}
-                    changeItemQuantity={changeItemQuantity}
-                    deleteItem={deleteItem}
-                    changeItemCheck={changeItemCheck}
-                  />
-                  <Items
-                    title="상온 제품"
-                    items={boxItems}
-                    changeItemQuantity={changeItemQuantity}
-                    deleteItem={deleteItem}
-                    changeItemCheck={changeItemCheck}
-                  />
+                  {ITEMS.map((item, i) => (
+                    <Items
+                      key={i}
+                      title={item.name}
+                      items={sortedItem[item.data]}
+                      changeItemQuantity={changeItemQuantity}
+                      deleteItem={deleteItem}
+                      changeItemCheck={changeItemCheck}
+                    />
+                  ))}
                 </div>
                 <SelectBtns
                   checkedItemsLength={checkedItemsLength}
@@ -273,8 +278,23 @@ function Cart() {
           </>
         )}
       </div>
+      {isOrderSuccessModalOpen && (
+        <Modal closeModal={closeOrderSuccessModal}>
+          <div className="orderSuccessModalWrapper">
+            <button className="deleteBtn" onClick={closeOrderSuccessModal}>
+              <TiDeleteOutline />
+            </button>
+            <span className="text">주문 완료!</span>
+          </div>
+        </Modal>
+      )}
     </section>
   );
 }
 
 export default Cart;
+
+const ITEMS = [
+  { name: '냉장 상품', data: 'coldItems' },
+  { names: '상온 제품', data: 'boxItems' },
+];
