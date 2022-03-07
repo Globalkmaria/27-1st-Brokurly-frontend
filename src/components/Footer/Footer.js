@@ -11,7 +11,7 @@ function Footer() {
             <div className="phoneNumber">1644-1234</div>
             <div className="CustomerCenterBoxRight">
               <div className="everydayCenter">365고객센터</div>
-              <div className="operatingHours">오전 7시 - 오후 7시</div>
+              <div className="operatingHours">{CS_CENTER_TIME.call}</div>
             </div>
           </div>
 
@@ -21,26 +21,28 @@ function Footer() {
             </div>
             <div className="CustomerCenterBoxRight">
               <div className="everydayCenter">365고객센터</div>
-              <div className="operatingHours">오전 7시 - 오후 7시</div>
+              <div className="operatingHours">{CS_CENTER_TIME.kakao}</div>
             </div>
           </div>
         </div>
 
         <div className="footerRightSection">
           <ul className="introduceBar">
-            <li className="introduce">컬리소개</li>
-            <li className="introduce">소개영상</li>
-            <li className="introduce">인재채용</li>
-            <li className="introduce">이용약관</li>
+            {INFOMATIONS.map((item, i) => (
+              <li key={i} className="introduce">
+                {item}
+              </li>
+            ))}
           </ul>
           <address className="introduceText">
             <p className="introduceText">
-              법인명 (상호): 주식회사 브로컬리 | 사업자 등록번호: 000-00-00000
+              법인명 (상호): {ABOUT_KURLY.name} | 사업자 등록번호:{' '}
+              {ABOUT_KURLY.code}
             </p>
-            주소: 서울특별시 강남구 테헤란로 | 제휴문의:
-            <span className="businessText"> business@brokurly.com</span>
+            주소: {ABOUT_KURLY.address} | 제휴문의:
+            <span className="businessText"> {ABOUT_KURLY.email}</span>
           </address>
-          <div className="corpText">BROKURLY CORP.ALL RIGHT RESERVED</div>
+          <div className="corpText">{ABOUT_KURLY.copyRight}</div>
         </div>
       </div>
     </footer>
@@ -48,3 +50,16 @@ function Footer() {
 }
 
 export default Footer;
+
+const INFOMATIONS = ['컬리소개', '소개영상', '인재채용', '이용약관'];
+const ABOUT_KURLY = {
+  name: '주식회사 브로컬리',
+  code: '000-00-00000',
+  address: '서울특별시 강남구 테헤란로',
+  email: 'business@brokurly.com',
+  copyRight: 'BROKURLY CORP.ALL RIGHT RESERVED',
+};
+const CS_CENTER_TIME = {
+  call: '오전 7시 - 오후 7시',
+  kakao: '오전 7시 - 오후 7시',
+};
