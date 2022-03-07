@@ -3,7 +3,7 @@ import Product from './Product/Product';
 import './OrderDetail.scss';
 import API from '../../../config';
 
-function OrderDetail({ order, changeOrderState }) {
+function OrderDetail({ order, changeOrderState, openCancelModal }) {
   const { order_id, order_number, order_status, products } = order;
   const token = sessionStorage.getItem('token');
   const cancelOrder = order_id => {
@@ -28,7 +28,7 @@ function OrderDetail({ order, changeOrderState }) {
             break;
           case 'SUCCESS':
             changeOrderState(order_id);
-            alert('주문이 취소되었습니다.');
+            openCancelModal();
             break;
           default:
             break;
