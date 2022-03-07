@@ -6,6 +6,8 @@
 ## Check the website
 
 [Brokurly](http://organicbrokurly.s3-website.ap-northeast-2.amazonaws.com/)
+Test Id : test11
+Password : 123456789
 
 ## Project duration
 
