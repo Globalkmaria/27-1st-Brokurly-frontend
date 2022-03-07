@@ -58,38 +58,62 @@
 - Because Product List was the main page, I couldn't use react-router. Instead, I used different queries to handle different categories.
 - 3 elements (Menu, Category, Sorting) were used to show products and get data.
 - When user click Menu(the option in the Navbar) Category and Sorting is initialized, and show Category: All, Sort: newest.
-- When Cart Button(Which is above the Product image) is clicked, Modal that helps user add product right away pops up.
-- When user click the product, user can move to the Product Detail Page.
-- When user add product to the cart, message('Product is added to the cart') will show over the product image.
-
-- 상세 리스트가 메인 화면이기 때문에 params로 카테고리별 다른 화면을 보여주는 것이 아니라 quary로 해당 부분을 관리
+- 상세 리스트가 메인 화면이기 때문에 params로 카테고리별 다른 화면을 보여주는 것이 아니라 query로 해당 부분을 관리
 - 대분류, 중분류, 정렬 3가지 요소를 데이터를 가져오기 위해 사용
 - 대분류가 클릭 됐을 때 중분류 -> 전체 보기, 정렬 -> 신상순으로 정렬되어 일관성이 있도록 관리
+  <br/>
+
+![show list of items](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/showList.gif?raw=true)
+
+- When Cart Button(Which is above the Product image) is clicked, Modal that helps user add product right away pops up.
+- When user add product to the cart, message('Product is added to the cart') will show over the product image.
 - 카트 버튼을 눌러 modal창으로 상품을 주문할 수 있게 함
-- 상품 부분 클릭 시 상세 페이지로 이동
 - 상품 카트에 추가 시 상품 이미지 위에 '장바구니에 담겼습니다' 메세지 애니메이션 효과
+  <br/>
+
+![add to Cart](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/addToCart.gif?raw=true)
+
+- When user click the product, user can move to the Product Detail Page.
+- 상품 부분 클릭 시 상세 페이지로 이동
+  <br/>
+
+![to detail page](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/toItem.gif?raw=true)
 
 #### Cart page
+
+- When you aren't signed in, the order button is blocked.
+- 로그인하지 않았을 때 fetch를 하지 않게 하여 No Token 에러 없앰
 
 - 2 ways to change product quantity
   - When user use the button, user can change by 1 unit.
   - When user change the quantity text, user can change to any number.
-- When you aren't signed in, the order button is blocked.
-- Check part or all of the products in the carting list.
-- Delete part or all of the products in the carting list.
-- Total amount shows only the ones that are checked.
-- Cart list products are sorted into two parts(how it is packed).
-- Open or Close the list.
-
 - 수량 입력
   - 버튼으로 1단위 변화, 수량 직접 입력 가능
   - 0, 빈칸 -> 수량을 1이 되도록 만듦
-- 로그인하지 않았을 때 fetch를 하지 않게 하여 No Token 에러 없앰
-- 전체, 부분 선택 가능
-- 전체, 부분, 1개 삭제 가능
+    <br/>
+
+![change input in Cart page](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/changeCartInput.gif?raw=true)
+
+- Check or Delete part or all of the products in the carting list.
+- 전체, 부분 선택 또는 삭제 가능
+  <br/>
+
+![check and delete products](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/checkAndDelete.gif?raw=true)
+
+- Total amount shows only the ones that are checked.
 - 총금액은 체크된 상품만 계산
+  <br/>
+
+![get total price](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/total.gif?raw=true)
+
+- Cart list products are sorted into two parts(how it is packed).
+- Open or Close the list.
+
 - 냉장, 상온 2개로 상품을 분류하여 소비자가 보기 편리하게 구성
 - 분류별 토글 버튼을 만들어 해당 리스트 펼치거나 접을 수 있게 함
+  <br/>
+
+![toggle items](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/itemToggle.gif?raw=true)
 
 #### Purchase History Page
 
@@ -98,6 +122,9 @@
 
 - 최신순으로 주문서 보여줌
 - 주문서별 주문 취소 기능
+  <br/>
+
+![purchase and cancel purchase](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/purchase.gif?raw=true)
 
 ## ERD
 
