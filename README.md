@@ -126,7 +126,7 @@ Password : 123456789
 - 주문서별 주문 취소 기능
   <br/>
 
-![purchase and cancel purchase](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/purchase.gif?raw=true)
+![purchase and cancel purchase](https://github.com/Globalkmaria/Brokurly/blob/main/public/images/order.gif?raw=true)
 
 ## ERD
 
