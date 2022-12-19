@@ -3,12 +3,6 @@
 - Easy and Best way to buy organic vegetables.
 - Grocery e-commerce
 
-## Check the website
-
-[Brokurly](http://organicbrokurly.s3-website.ap-northeast-2.amazonaws.com/)
-Test Id : test11
-Password : 123456789
-
 ## Project duration
 
 2021/Nov/29 - 2021/Dec/9
