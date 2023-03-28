@@ -1,5 +1,5 @@
 # Brokurly
-
+- Webpage was deployed with AWS but currently the webpage is down.
 - Easy and Best way to buy organic vegetables.
 - Grocery e-commerce
 
